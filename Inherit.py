@@ -1,6 +1,11 @@
 import os
 
-class Launcher(object):
+class DerivativeLauncher(object):
+
+    """
+    This class allows sub classes to instaniate their super class as a data store.
+
+    """
     def __init__(self):
 
         self.setRelPath("Projects/amelnychuk")
@@ -21,20 +26,21 @@ class Launcher(object):
         return self.super
 
 
+class HoudiniLauncher(DerivativeLauncher):
 
-
-class HoudiniLauncher(Launcher):
+    """
+    Sub Launcher to lauch a specfic program
+    """
     def __init__(self):
 
-        Launcher.__init__(self)
+        DerivativeLauncher.__init__(self)
         self.setRelPath("houdini/hip")
 
 
-
-
-
-
 class HoudiniDevLauncher(HoudiniLauncher):
+    """
+    Derivitive launcher to launch a program with specific properties and work on the data that the parent launcher provides
+    """
     def __init__(self):
         HoudiniLauncher.__init__(self)
         self.setRelPath("dev/issue")
