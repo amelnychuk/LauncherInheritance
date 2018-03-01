@@ -28,7 +28,7 @@ class HoudiniLauncher(Launcher):
 
         Launcher.__init__(self)
         self.setRelPath("houdini/hip")
-        print ("Working")
+
 
 
 
